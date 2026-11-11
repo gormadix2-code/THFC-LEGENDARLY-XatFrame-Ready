@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#080b18">
+<meta name="description" content="THFC LEGENDARLY — สม уหยองฮ่ะ.">
+<title>THFC LEGENDARLY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b18;--glass:rgba(255,255,255,.075);--line:rgba(255,255,255,.12);--white:#f4f5f8;--muted:#a6a9b5;--accent:#b8c4d8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{width:100%;min-height:100vh;min-height:100dvh;margin:0;background:radial-gradient(ellipse at 18% 15%,#30323b 0,transparent 38%),radial-gradient(ellipse at 85% 80%,#202633 0,transparent 42%),var(--bg);color:var(--white);font-family:Inter,"Noto Sans Thai",sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(120deg,transparent 25%,rgba(255,255,255,.035) 48%,transparent 65%);animation:shimmer 12s ease-in-out infinite alternate}
+@keyframes shimmer{from{transform:translateX(-8%)}to{transform:translateX(8%)}}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:24px 34px 42px;position:relative}
+nav{height:48px;display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.logo{font-size:14px;font-weight:900;letter-spacing:1.6px}
+.logo span{color:#aebbd0}
+.menu{display:flex;gap:28px}
+a{color:inherit;text-decoration:none}
+.menu a,.archive{font-size:10px;color:#c0c3cc;transition:.25s}
+.menu a:hover,.archive:hover{color:#fff;text-shadow:0 0 12px #fff}
+.online{width:9px;height:9px;border-radius:50%;background:#8de0c0;box-shadow:0 0 15px #8de0c0;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.35;transform:scale(.8)}}
+.layout{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
+.cover{min-height:620px;border-radius:18px;overflow:hidden;position:relative;border:1px solid var(--line);background:#222}
+.cover>img{position:absolute;width:100%;height:100%;object-fit:cover;object-position:center 42%;transition:transform .8s,filter .8s;filter:grayscale(.5) contrast(1.05)}
+.cover:hover>img{transform:scale(1.045);filter:grayscale(.1) contrast(1.08)}
+.cover:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.78));pointer-events:none}
+.cover-caption{position:absolute;z-index:1;left:18px;right:18px;bottom:18px;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:rgba(9,11,18,.76);backdrop-filter:blur(16px)}
+.eyebrow{font-size:8px;letter-spacing:2.5px;color:#c0c5d0}
+.cover-caption h2{font-size:19px;margin-top:7px;letter-spacing:.2px}
+.right{display:flex;flex-direction:column;gap:14px;min-width:0}
+.glass{background:var(--glass);border:1px solid var(--line);border-radius:17px;backdrop-filter:blur(18px);box-shadow:0 16px 45px rgba(0,0,0,.16)}
+.profile{padding:17px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.identity{display:flex;align-items:center;gap:12px;min-width:0}
+.avatar{width:44px;height:44px;flex:none;border-radius:50%;overflow:hidden;border:1px solid rgba(255,255,255,.5);box-shadow:0 0 18px #cbd5e122}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.profile h1{font-size:18px;font-weight:800;white-space:nowrap}
+.profile .subtitle{font-size:10px;color:var(--muted);margin-top:4px}
+.stats{display:flex;gap:16px}
+.stats div{text-align:center}
+.stats small{display:block;font-size:7px;letter-spacing:1.6px;color:#9299a8}
+.stats b{font-size:13px;font-weight:600}
+.about{padding:19px 20px}
+.about p{font-size:11px;line-height:2;color:#d0d2d9}
+.about strong{color:#fff}
+.quote{margin-top:12px;font-size:9px;letter-spacing:1.8px;color:#aab4c5}
+.social{display:grid;gap:8px}
+.social a{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-radius:9px;background:rgba(255,255,255,.045);font-size:10px;color:#d5d7dd;transition:.25s}
+.social a:hover{background:rgba(255,255,255,.12);transform:translateX(4px)}
+.contact{display:inline-flex;margin-top:12px;padding:9px 15px;border-radius:24px;background:#e7e9ed;color:#10131b;font-size:10px;font-weight:700;transition:.25s}
+.contact:hover{background:#fff;box-shadow:0 0 22px #fff4}
+
+/* MUSIC PLAYER */
+
+.youtube-music{display:block;padding:17px 18px}
+.youtube-frame{position:relative;width:100%;aspect-ratio:16/5;min-height:100px;margin-top:12px;overflow:hidden;border-radius:11px;background:#05070d;border:1px solid var(--line)}
+.youtube-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media(max-width:560px){.youtube-frame{aspect-ratio:16/7;min-height:110px}}
+
+.music-player{padding:17px 18px;display:flex;align-items:center;gap:13px}
+.music-disc{width:42px;height:42px;flex:none;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle,#202633 0 25%,#aebbd0 27% 31%,#303847 33% 100%);
+  border:1px solid rgba(255,255,255,.24);box-shadow:0 0 18px #cbd5d122;animation:spin 8s linear infinite;animation-play-state:paused}
+.music-player.playing .music-disc{animation-play-state:running}
+@keyframes spin{to{transform:rotate(360deg)}}
+.music-disc span{width:8px;height:8px;border-radius:50%;background:#dce2eb}
+.music-main{min-width:0;flex:1}
+.music-kicker{font-size:7px;letter-spacing:2px;color:#9da8ba}
+.music-title{font-size:11px;font-weight:700;margin-top:4px}
+.music-sub{font-size:9px;color:#9da3b1;margin-top:3px}
+.music-controls{display:flex;align-items:center;gap:9px}
+.music-btn{width:32px;height:32px;border:0;border-radius:50%;background:#e7e9ed;color:#10131b;font-size:13px;cursor:pointer;transition:.2s}
+.music-btn:hover{background:#fff;transform:scale(1.07)}
+.music-volume{width:65px;accent-color:#dce2eb}
+.music-progress{width:100%;height:3px;margin-top:9px;accent-color:#dce2eb;cursor:pointer}
+.music-time{display:flex;justify-content:space-between;font-size:8px;color:#9299a8;margin-top:3px}
+@media(max-width:560px){.music-player{flex-wrap:wrap}.music-controls{margin-left:auto}.music-volume{width:55px}}
+
+.latest{padding:18px}
+.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px}
+.section-head h3{font-size:8px;letter-spacing:2.5px;color:#aeb4c2}
+.projects{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.project{overflow:hidden;border-radius:11px;background:rgba(0,0,0,.22);transition:.3s}
+.project:hover{transform:translateY(-4px);box-shadow:0 12px 25px #0005}
+.project img{display:block;width:100%;height:112px;object-fit:cover;filter:grayscale(.35);transition:.4s}
+.project:hover img{filter:grayscale(0);transform:scale(1.03)}
+.project-info{padding:10px}
+.project-info h4{font-size:9px;letter-spacing:1px}
+.project-info p{font-size:9px;color:#a2a7b3;margin-top:5px}
+footer{text-align:center;padding:27px 10px 0;font-size:8px;letter-spacing:2px;color:#818897}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.cover{min-height:520px}}
+@media(max-width:560px){.wrap{padding:16px 12px 30px}nav{margin-bottom:16px}.menu{gap:11px}.menu a{font-size:8px}.logo{font-size:10px}.cover{min-height:430px}.profile{flex-wrap:wrap}.stats{width:100%;justify-content:space-around;padding-top:8px}.profile h1{font-size:16px}.projects{gap:8px}.project img{height:95px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <div class="logo">✦ THFC <span>LEGENDARLY</span></div>
+    <div class="menu">
+      <a href="#portfolio">Portfolio</a><a href="#stories">Stories</a><a href="#journal">Journal</a><a href="#contact">Contact</a>
+    </div>
+    <div class="online" title="Online"></div>
+  </nav>
+
+  <main class="layout">
+    <section class="cover" id="portfolio">
+      <img src="images/cover.jpg" alt="ภาพหน้าปก">
+      <div class="cover-caption">
+        <div class="eyebrow">FEATURED SERIES</div>
+        <h2>THFC LEGENDARLY</h2>
+      </div>
+    </section>
+
+    <div class="right">
+      <section class="glass profile">
+        <div class="identity">
+          <div class="avatar"><img src="images/avatar.jpg" alt="รูปโปรไฟล์"></div>
+          <div><h1>สมหยองฮ่ะ.</h1><div class="subtitle">พวกปลอมๆก็แค่ Delete.</div></div>
+        </div>
+        <div class="stats">
+          <div><small>PROJECTS</small><b>47</b></div>
+          <div><small>YEARS</small><b>9</b></div>
+          <div><small>CITIES</small><b>5</b></div>
+        </div>
+      </section>
+
+      <section class="glass about" id="stories">
+        <p>If life is a movie, you're the best part.<br>หากชีวิตคือหนังเรื่องหนึ่ง คุณคือตอนที่ดีที่สุด<br><br><strong>พวกปลอมๆก็แค่ Delete.</strong><br>ไม่จำเป็นต้องอธิบายให้ทุกคนเข้าใจ เพราะตัวตนของเราไม่จำเป็นต้องพิสูจน์ให้ใครเห็น</p>
+        <div class="quote">✦ ORIGINAL NEVER COPIES.</div>
+      </section>
+
+
+      <section class="glass music-player youtube-music" id="musicPlayer">
+        <div class="music-main">
+          <div class="music-kicker">NOW PLAYING</div>
+          <div class="music-title">THFC LEGENDARLY — YouTube Music</div>
+          <div class="music-sub">กด Play บนเครื่องเล่นเพื่อเริ่มเพลง</div>
+          <div class="youtube-frame">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/pTQiOMm_53Y?rel=0&playsinline=1"
+              title="THFC LEGENDARLY background music"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="glass about" id="contact">
+        <div class="social">
+          <a href="#" target="_blank" rel="noopener">Instagram <span>↗</span></a>
+          <a href="#" target="_blank" rel="noopener">Facebook <span>↗</span></a>
+          <a href="#" target="_blank" rel="noopener">X / Twitter <span>↗</span></a>
+        </div>
+        <a class="contact" href="#contact">Contact Me ↗</a>
+      </section>
+
+      <section class="glass latest" id="journal">
+        <div class="section-head"><h3>LATEST WORK</h3><a class="archive" href="#portfolio">View archive ↗</a></div>
+        <div class="projects">
+          <article class="project">
+            <img src="images/work-1.jpg" alt="ผลงานที่หนึ่ง">
+            <div class="project-info"><h4>MONOCHROME</h4><p>Personal collection</p></div>
+          </article>
+          <article class="project">
+            <img src="images/work-2.jpg" alt="ผลงานที่สอง">
+            <div class="project-info"><h4>QUIET MOMENT</h4><p>Personal collection</p></div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer>© 2026 THFC LEGENDARLY — ALL RIGHTS RESERVED.</footer>
+</div>
+
+
+
+</body>
+</html>
